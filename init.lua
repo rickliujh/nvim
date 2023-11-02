@@ -159,7 +159,7 @@ require('lazy').setup({
       vim.cmd.colorscheme 'onedark'
     end,
     opts = {
-      style = 'cool'
+      style = 'cool',
     },
   },
 
@@ -267,6 +267,11 @@ if vim.fn.has('wsl') == 1 then
     cache_enabled = 0,
   }
 end
+
+-- Highlight the line number.
+vim.o.cursorline = true
+vim.o.cursorlineopt = 'number'
+vim.o.relativenumber = true
 
 -- Enable break indent
 vim.o.breakindent = true
