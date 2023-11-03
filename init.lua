@@ -219,6 +219,15 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  -- Comment supported by another pluging works really will so there is not need for this pluging.
+  -- {
+  --   'numToStr/Comment.nvim',
+  --   opts = {
+  --     -- add any options here
+  --   },
+  --   lazy = false,
+  -- }
+
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
