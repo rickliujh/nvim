@@ -110,7 +110,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -257,12 +257,12 @@ if vim.fn.has('wsl') == 1 then
   vim.g.clipboard = {
     name = 'WslClipboard',
     copy = {
-       ['+'] = 'clip.exe',
-       ['*'] = 'clip.exe',
-     },
+      ['+'] = 'clip.exe',
+      ['*'] = 'clip.exe',
+    },
     paste = {
-       ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-       ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
     },
     cache_enabled = 0,
   }
@@ -358,7 +358,8 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
+      'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -386,6 +387,8 @@ vim.defer_fn(function()
           ['if'] = '@function.inner',
           ['ac'] = '@class.outer',
           ['ic'] = '@class.inner',
+          ['a/'] = '@comment.outer',
+          ['i/'] = '@comment.inner',
         },
       },
       move = {
