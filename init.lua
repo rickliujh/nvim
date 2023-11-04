@@ -230,6 +230,12 @@ require('lazy').setup({
     lazy = false,
   },
 
+  {
+    'ThePrimeagen/harpoon',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+  },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -312,7 +318,7 @@ vim.o.termguicolors = true
 vim.o.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 vim.o.undofile = true
 
-vim.o.scrolloff = 8 
+vim.o.scrolloff = 8
 
 vim.o.colorcolumn = "85"
 
@@ -452,6 +458,17 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- [[ Configure Harpoon]]
+-- Basic setup to helps to switch between buffers.
+vim.keymap.set('n', '<leader>tb', require('harpoon.ui').toggle_quick_menu)
+vim.keymap.set('n', '<leader>af', require('harpoon.mark').add_file)
+vim.keymap.set('n', '<M-9>', require('harpoon.ui').nav_next)
+vim.keymap.set('n', '<M-0>', require('harpoon.ui').nav_prev)
+vim.keymap.set('n', '<M-1>', function() require('harpoon.ui').nav_file(1) end)
+vim.keymap.set('n', '<M-2>', function() require('harpoon.ui').nav_file(2) end)
+vim.keymap.set('n', '<M-3>', function() require('harpoon.ui').nav_file(3) end)
+
 
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
