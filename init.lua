@@ -312,7 +312,7 @@ vim.o.termguicolors = true
 vim.o.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 vim.o.undofile = true
 
-vim.o.scrolloff = 12
+vim.o.scrolloff = 8 
 
 vim.o.colorcolumn = "85"
 
