@@ -461,7 +461,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- [[ Configure Harpoon]]
 -- Basic setup to helps to switch between buffers.
-vim.keymap.set('n', '<leader>tb', require('harpoon.ui').toggle_quick_menu)
+vim.keymap.set('n', '<C-e>', require('harpoon.ui').toggle_quick_menu)
 vim.keymap.set('n', '<leader>af', require('harpoon.mark').add_file)
 vim.keymap.set('n', '<M-9>', require('harpoon.ui').nav_next)
 vim.keymap.set('n', '<M-0>', require('harpoon.ui').nav_prev)
