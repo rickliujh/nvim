@@ -12,8 +12,7 @@ Kickstart.nvim is a template for your own configuration.
 
   Once you've done that, you should start exploring, configuring and tinkering to
   explore Neovim!
-
-  If you don't know anything about Lua, I recommend taking some time to read through
+;  If you don't know anything about Lua, I recommend taking some time to read through
   a guide. One possible example:
   - https://learnxinyminutes.com/docs/lua/
 
@@ -252,6 +251,7 @@ require('lazy').setup({
 
 -- Set highlight on search
 vim.o.hlsearch = false
+vim.o.incsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
@@ -307,6 +307,10 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- Set undotree file
+vim.o.undodir = os.getenv 'HOME' .. '/.vim/undodir'
+vim.o.undofile = true
 
 -- [[ Basic Keymaps ]]
 
