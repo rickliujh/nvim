@@ -312,6 +312,8 @@ vim.o.termguicolors = true
 vim.o.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 vim.o.undofile = true
 
+vim.o.scrolloff = 12 
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
