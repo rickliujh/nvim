@@ -74,6 +74,8 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  'mbbill/undotree',
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -227,10 +229,6 @@ require('lazy').setup({
       -- add any options here
     },
     lazy = false,
-  },
-  
-  {
-    'mbbill/undotree',
   },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
