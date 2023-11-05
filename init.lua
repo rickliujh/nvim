@@ -489,6 +489,7 @@ local on_attach = function(_, bufnr)
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>f', vim.lsp.buf.format, '[F]ormat Code')
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
@@ -593,7 +594,7 @@ cmp.setup {
       luasnip.lsp_expand(args.body)
     end,
   },
-  -- These movements are used for moving things 
+  -- These movements are used for moving things
   -- like hover content when you're in the INSERT mode
   mapping = cmp.mapping.preset.insert {
     ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -639,7 +640,7 @@ cmp.setup {
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
--- append next line to this line recursively 
+-- append next line to this line recursively
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- keep cursor in the center when you moving around
@@ -652,10 +653,10 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- yank to '+' register (system)
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- delete without add it to clipboard aka black register, register '_'
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- aviod using quikcsearch
 vim.keymap.set("n", "Q", "<nop>")
